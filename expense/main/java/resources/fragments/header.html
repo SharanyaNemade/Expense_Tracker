@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+  <nav>
+    <a th:href="@{/home}">Home</a> |
+    <a th:href="@{/expenses}">Expenses</a> |
+    <a th:href="@{/expenses/add}">Add Expense</a> |
+    <a th:href="@{/logout}">Logout</a>
+  </nav>
+</header>
+<main>
