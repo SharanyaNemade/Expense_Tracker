@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Expense List</title>
+	
+	
+    <!-- Bootstrap CSS CDN link -->
+    
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Expense List</h2>
+
+    <div class="mb-3 text-center">
+        <a th:href="@{/expenses/add}" class="btn btn-success">Add New Expense</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    
+					<!--<th>Actions</th>-->
+					
+					
+                </tr>
+            </thead>
+            <tbody>
+				
+                <tr th:each="expense : ${expenses}">
+                    <td th:text="${expense.title}">Title</td>
+                    <td th:text="${expense.amount}">Amount</td>
+                    <td th:text="${expense.date}">Date</td>
+                    <td th:text="${expense.description}">Description</td>
+                    <!--<td>
+                        <a th:href="@{'/expenses/edit/' + ${expense.id}}" class="btn btn-primary btn-sm">Edit</a>
+                    </td>-->
+                </tr>
+                
+				<tr th:if="${expenses.size() == 0}">
+                    <td colspan="5" class="text-center">No expenses found. Add your first expense!</td>
+                </tr>
+				
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap JS CDN link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+					
+					
+					
+					
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Expense List</title>
+</head>
+<body>
+<h2>Expense List</h2>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="expense : ${expenses}">
+        <td th:text="${expense.title}">Title</td>
+        <td th:text="${expense.amount}">Amount</td>
+        <td th:text="${expense.date}">Date</td>
+        <td th:text="${expense.description}">Description</td>
+        <td>
+            <a th:href="@{'/expenses/edit/' + ${expense.id}}">Edit</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+-->
